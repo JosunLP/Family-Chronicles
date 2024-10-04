@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import { Blob, File } from "buffer";
+import { IModel } from "../interfaces/model.interface";
 
 /**
  * Related data model
