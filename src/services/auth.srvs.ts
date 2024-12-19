@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import ConfigService from "./config.srvs.js";
-import { Config } from "../types/config.type";
 import User from "../models/user.model.js";
 import ErrorResult from "../models/actionResults/error.result.js";
 import DatabaseService from "./database.srvs.js";
@@ -21,7 +20,7 @@ import FailedAttemptModel from "../models/failedAttempts.model.js";
  */
 export default class AuthorizationService {
 	private static _instance: AuthorizationService;
-	private _config = ConfigService.getInstance().config as Config;
+	private _config = ConfigService.getInstance().config;
 	private _database = DatabaseService.getInstance();
 	private _failedAttempts: FailedAttemptModel[] = [];
 
